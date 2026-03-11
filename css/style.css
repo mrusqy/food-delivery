@@ -1,0 +1,68 @@
+/* Import Font Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    /* Tema Warna Sesuai Request */
+    --primary: #FFD400;      /* Kuning Cerah */
+    --secondary: #FFFFFF;    /* Putih */
+    --dark: #000000;         /* Hitam Tegas */
+    --accent: #E53935;       /* Merah Urgensi */
+    --support: #0F6B3C;      /* Hijau Lokal/Fresh */
+    --soft-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #F8F9FA;
+    color: var(--dark);
+}
+
+/* Custom Components */
+@layer components {
+    .btn-primary {
+        @apply bg-[#FFD400] hover:bg-[#FFC700] text-black font-semibold py-3 px-6 rounded-2xl 
+               transition-all duration-300 shadow-sm active:scale-95 flex items-center justify-center;
+    }
+
+    .card-menu {
+        @apply bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-md 
+               transition-shadow duration-300 border border-gray-100;
+    }
+
+    .status-badge {
+        @apply px-3 py-1 rounded-full text-xs font-medium uppercase tracking-wider;
+    }
+
+    /* Animasi Loading */
+    .loader {
+        border: 3px solid #f3f3f3;
+        border-top: 3px solid var(--primary);
+        border-radius: 50%;
+        width: 24px;
+        height: 24px;
+        animation: spin 1s linear infinite;
+    }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Bottom Navigation untuk Mobile */
+.bottom-nav {
+    @apply fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 
+           flex justify-around items-center py-3 px-6 z-50 md:hidden;
+}
+
+.bottom-nav-item {
+    @apply flex flex-col items-center text-gray-400 hover:text-[#FFD400] transition-colors;
+}
+
+.bottom-nav-item.active {
+    @apply text-[#FFD400];
+}
