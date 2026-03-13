@@ -1,4 +1,4 @@
-const API_URL = "https://script.google.com/macros/s/AKfycbw1BaVK1W7vSQ0PurADd0LhpKqmffqVp0Gvb97y1m4drwyZHqvPO5csI5YYdcnPVdH3/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycbykGkoutTI2_Wfi4e-4WyNG8CAhqPaI4kDaZQ-QtqvHswDU2mueBtDHOGtgEEEM3r3h/exec";
 
 async function fetchMenus() {
     try {
